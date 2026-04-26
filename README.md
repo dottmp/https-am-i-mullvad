@@ -1,6 +1,10 @@
 # https-am-i-mullvad
 
-Using https-am-i-mullvad, you can check if your connection is using Mullvad VPN or not without having to install their cli. It is a simple script that checks your IP address against mullvads <https://am.i.mullvad.net/> service.
+https-am-i-mullvad is a simple script that checks your IP address against mullvads <https://am.i.mullvad.net/> service.
+
+Perfect for when you want to check if you are
+connected to mullvad but your not running mullvad
+directly on your machine e.g. your running your vpn on your router.
 
 > NOTE: Be nice to their service and don't set the interval too low, 60 seconds is a good starting point. (◕‿◕✿)
 
