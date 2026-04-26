@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
-# Mullvad VPN Status Checker (Router-Compatible)
+# Am I Mullvad Script
 #
 # Checks Mullvad VPN connectivity via am.i.mullvad.net API
-# Perfect when you dont run mullvad cli but are sill connected to mullvad e.g. vpn 
+# Perfect when you don't run mullvad cli but are sill connected to mullvad e.g. vpn 
 # on router situation.
 # 
-# Integrates nicely with waybar for status display and tooltip info, and allows copying the current VPN IP to clipboard.
+# Integrates nicely with waybar for status display and tooltip info, 
+# and allows copying the current VPN IP to clipboard.
 
 
 # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
