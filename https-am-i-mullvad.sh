@@ -4,7 +4,10 @@
 # Mullvad VPN Status Checker (Router-Compatible)
 #
 # Checks Mullvad VPN connectivity via am.i.mullvad.net API
-# Works when Mullvad is running on router instead of local daemon
+# Perfect when you dont run mullvad cli but are sill connected to mullvad e.g. vpn 
+# on router situation.
+# 
+# Integrates nicely with waybar for status display and tooltip info, and allows copying the current VPN IP to clipboard.
 
 
 # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
@@ -32,7 +35,7 @@ vpn_get_details() {
 VPN_CONNECTION=$(vpn_check_connection)
 VPN_DETAILS=$(vpn_get_details)
 
-# Parse JSON details (using grep/sed since jq might not be available)
+# Parse JSON details 
 VPN_IP=$(echo "$VPN_DETAILS" | grep -o '"ip":"[^"]*"' | cut -d'"' -f4)
 VPN_COUNTRY=$(echo "$VPN_DETAILS" | grep -o '"country":"[^"]*"' | cut -d'"' -f4)
 VPN_CITY=$(echo "$VPN_DETAILS" | grep -o '"city":"[^"]*"' | cut -d'"' -f4)
@@ -48,10 +51,8 @@ fi
 # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
 # Actions
 #
-# Note: When running Mullvad on router, toggle/reconnect actions are not available
-# You'll need to manage the VPN connection from your router's interface
 
-# [get_module_data] Get data for custom/mullvad-router module in waybar. Returns waybar JSON
+# [get_module_data] Get data for custom module in waybar. Returns waybar JSON
 get_module_data() {
   local class alt tooltip
   local timestamp=$(date '+%H:%M:%S')
