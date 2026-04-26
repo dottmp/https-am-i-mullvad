@@ -12,6 +12,8 @@
 
 # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
 # Mullvad Methods
+#
+# [vpn_check_connection] Check if connected to Mullvad VPN using their API
 vpn_check_connection() {
   # Check if connected via Mullvad using their API
   local response
@@ -24,7 +26,8 @@ vpn_check_connection() {
   fi
 }
 
-vpn_get_details() {
+#[get_raw_json] Get detailed VPN info from Mullvad API
+vpn_get_json() {
   # Get detailed info from Mullvad API (JSON format)
   curl -s --max-time 5 https://am.i.mullvad.net/json 2>/dev/null
 }
@@ -33,7 +36,7 @@ vpn_get_details() {
 # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
 # Vars
 VPN_CONNECTION=$(vpn_check_connection)
-VPN_DETAILS=$(vpn_get_details)
+VPN_DETAILS=$(vpn_get_json)
 
 # Parse JSON details 
 VPN_IP=$(echo "$VPN_DETAILS" | grep -o '"ip":"[^"]*"' | cut -d'"' -f4)
@@ -51,7 +54,6 @@ fi
 # @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
 # Actions
 #
-
 # [get_module_data] Get data for custom module in waybar. Returns waybar JSON
 get_module_data() {
   local class alt tooltip
@@ -86,5 +88,8 @@ copy_ip() {
 # Input
 case "$1" in
 copy) copy_ip ;;
+json) vpn_get_json ;;
+status) vpn_check_connection ;;
+waybar) get_module_data ;;
 *) get_module_data ;;
 esac
