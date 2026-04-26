@@ -13,7 +13,7 @@ Using https-am-i-mullvad, you can check if your connection is using Mullvad VPN 
 | json        | Returns the full JSON response from the Mullvad service.                      |
 | status      | Returns only the status of the connection (connected, disconnected).          |
 
-## Getting Started
+## Getting https-am-i-mullvad to work with waybar
 
 **1. Clone the repo**
 
