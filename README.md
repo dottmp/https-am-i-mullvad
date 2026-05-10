@@ -46,7 +46,7 @@ Paste the module into your `~/.config/waybar/config.jsonc`
   },
 ```
 
-**5. Add some sweet sweet css to your custom module**
+**4. Add some sweet sweet css to your custom module**
 
 ```css
 /* waybar/styles.css probably?*/
@@ -73,7 +73,7 @@ Paste the module into your `~/.config/waybar/config.jsonc`
 }
 ```
 
-**4. Restart waybar**
+**5. Restart waybar**
 
 ```sh
 killall waybar && waybar &
