@@ -24,7 +24,7 @@ git clone git@github.com:dottmp/https-am-i-mullvad.git
 **2. Run the install script**
 
 ```sh
-bash install.sh
+./install.sh
 ```
 
 This copies `https-am-i-mullvad.sh` to `~/.local/bin/https-am-i-mullvad`.
