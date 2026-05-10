@@ -21,7 +21,15 @@ Using https-am-i-mullvad, you can check if your connection is using Mullvad VPN 
 git clone git@github.com:dottmp/https-am-i-mullvad.git
 ```
 
-**2. Add the module to your waybar config**
+**2. Run the install script**
+
+```sh
+bash install.sh
+```
+
+This copies `https-am-i-mullvad.sh` to `~/.local/bin/https-am-i-mullvad`.
+
+**3. Add the module to your waybar config**
 
 Paste the module into your `~/.config/waybar/config.jsonc`
 
@@ -30,15 +38,15 @@ Paste the module into your `~/.config/waybar/config.jsonc`
 
   "custom/https-am-i-mullvad": {
     "format": "m",
-    "exec": "~/path/to/your/script/https-am-i-mullvad/https-am-i-mullvad.sh",
+    "exec": "https-am-i-mullvad",
     "interval": 60,
     "return-type": "json",
-    "on-click-right": "~/path/to/your/script/https-am-i-mullvad/https-am-i-mullvad.sh copy", #right click for copy ip
-    "on-click": "~/path/to/your/script/https-am-i-mullvad/https-am-i-mullvad.sh", #click for refresh
+    "on-click-right": "https-am-i-mullvad copy",
+    "on-click": "https-am-i-mullvad",
   },
 ```
 
-**3. Add some sweet sweet css to your custom module**
+**5. Add some sweet sweet css to your custom module**
 
 ```css
 /* waybar/styles.css probably?*/
